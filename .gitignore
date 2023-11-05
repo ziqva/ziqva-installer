@@ -2,3 +2,4 @@ venv
 main.spec
 dist
 build
+*.spec

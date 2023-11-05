@@ -16,8 +16,7 @@ apps_path: str = os.path.join(root_path, 'apps')
 if not os.path.exists(root_path) :
     os.makedirs(root_path)
 
-if not os.path.exists(tmp_path) :
-    os.makedirs(tmp_path)
+
 
 if not os.path.exists(apps_path) :
     os.makedirs(apps_path)
@@ -29,6 +28,8 @@ def generate_file_name(ext: str, length: int) -> str:
     return f'{fn}.{ext}'
 
 def download(download_url: str, title: str) -> str:
+    if not os.path.exists(tmp_path):
+        os.makedirs(tmp_path)
     target_file_path: str = os.path.join(tmp_path, generate_file_name('zip', 50))
     response = requests.get(download_url, stream=True)
     total_size = int(response.headers.get('content-length', 0))
