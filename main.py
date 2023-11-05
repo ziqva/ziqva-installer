@@ -4,6 +4,7 @@ import readchar
 import chalk
 import time
 import installer
+import shutil
 
 red = chalk.Chalk('red')
 green = chalk.Chalk('green')

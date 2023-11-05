@@ -89,6 +89,7 @@ def install(filepath: str, appname: str, version: str) -> str or None:
             'extension': pathlib.Path(file).suffix
         })
 
+    shutil.rmtree(tmp_path)
     for file_detail in file_details:
         filename = str.lower(file_detail['filename'])
         app_name = str.lower(appname)
